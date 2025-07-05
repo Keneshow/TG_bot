@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: tg_bot
+    restart: unless-stopped
+    environment:
+      - BOT_SCHOOL=${BOT_SCHOOL}
+      - ADMIN_ID=${ADMIN_ID}
+    volumes:
+      - ./:/app
